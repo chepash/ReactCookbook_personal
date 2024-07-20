@@ -1,0 +1,35 @@
+.card-container {
+  /* Base styles for card-container, if any */
+}
+
+.card-container.rain .weather-card {
+  background-color: red;
+}
+
+.card-container.rain .weather-card:after {
+  background-color: blue;
+}
+
+.card-container.cloudy .weather-card {
+  background-color: white;
+}
+
+.card-container.cloudy .weather-card:after {
+  background-color: aqua;
+}
+
+.card-container.sunny .weather-card {
+  background-color: azure;
+}
+
+.card-container.sunny .weather-card:after {
+  background-color: bisque;
+}
+
+.card-container.cloudy.sunny .weather-card {
+  background-color: aliceblue;
+}
+
+.card-container.cloudy.sunny .weather-card:after {
+  background-color: burlywood;
+}

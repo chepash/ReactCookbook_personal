@@ -1,0 +1,29 @@
+.card-container {
+  container-name: weather;
+}
+
+@mixin weather-card($background-color, $after-background-color) {
+  .weather-card {
+    background-color: $background-color;
+  }
+
+  .weather-card:after {
+    background-color: $after-background-color;
+  }
+}
+
+@container style(--rain: true) {
+  @include weather-card(red, blue);
+}
+
+@container style(--cloudy: true) {
+  @include weather-card(white, aqua);
+}
+
+@container style(--sunny: true) {
+  @include weather-card(azure, bisque);
+}
+
+@container style(--sunny: true) and style(--cloudy: true) {
+  @include weather-card(aliceblue, burlywood);
+}

@@ -1,0 +1,46 @@
+.card-container {
+  /* Base styles for card-container, if any */
+}
+
+/* .card-container.rain .weather-card {
+  color: hsl(131, 100%, 25%);
+} */
+
+.card-container.rain {
+  .weather-card {
+    background-color: #ff0000;
+  }
+  .weather-card:after {
+    background-color: blue;
+  }
+}
+
+.card-container.cloudy {
+  .weather-card {
+    background-color: white;
+  }
+
+  .weather-card:after {
+    background-color: aqua;
+  }
+}
+
+.card-container.sunny {
+  .weather-card {
+    background-color: azure;
+  }
+
+  .weather-card:after {
+    background-color: bisque;
+  }
+}
+
+.card-container.cloudy.sunny {
+  .weather-card {
+    background-color: aliceblue;
+  }
+
+  & .weather-card:after {
+    background-color: burlywood;
+  }
+}

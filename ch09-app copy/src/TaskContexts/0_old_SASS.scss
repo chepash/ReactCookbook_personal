@@ -1,0 +1,43 @@
+.card-container {
+  // Base card-container styles
+
+  &.rain {
+    .weather-card {
+      background-color: red;
+
+      &:after {
+        background-color: blue;
+      }
+    }
+  }
+
+  &.cloudy {
+    .weather-card {
+      background-color: white;
+
+      &:after {
+        background-color: aqua;
+      }
+    }
+  }
+
+  &.sunny {
+    .weather-card {
+      background-color: azure;
+
+      &:after {
+        background-color: bisque;
+      }
+    }
+  }
+
+  &.cloudy.sunny {
+    .weather-card {
+      background-color: aliceblue;
+
+      &:after {
+        background-color: burlywood;
+      }
+    }
+  }
+}
