@@ -14,7 +14,7 @@ const usePeopleFast = (...ids) => {
       t.next();
       const result = await Promise.all(ids.map((id) => get('/people/' + id)));
       if (!didCancel) {
-        console.log('usePeopleSlow took', t.next().value);
+        console.log('usePeopleFast took', t.next().value);
         setPeople(result);
       }
     })();
