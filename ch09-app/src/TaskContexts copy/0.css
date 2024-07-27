@@ -1,0 +1,43 @@
+.card-container {
+  container-name: weather;
+}
+
+@container style(--rain: true) {
+  .weather-card {
+    background-color: red;
+  }
+
+  .weather-card:after {
+    background-color: blue;
+  }
+}
+
+@container style(--cloudy: true) {
+  .weather-card {
+    background-color: white;
+  }
+
+  .weather-card:after {
+    background-color: aqua;
+  }
+}
+
+@container style(--sunny: true) {
+  .weather-card {
+    background-color: azure;
+  }
+
+  .weather-card:after {
+    background-color: bisque;
+  }
+}
+
+@container style(--sunny: true) and style(--cloudy: true) {
+  .weather-card {
+    background-color: aliceblue;
+  }
+
+  .weather-card:after {
+    background-color: burlywood;
+  }
+}

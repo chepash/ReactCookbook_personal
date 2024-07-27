@@ -1,0 +1,3 @@
+.parent:has(.style-me, #someId) {
+  color: red;
+}

@@ -1,0 +1,36 @@
+@mixin weather-card($background-color, $after-background-color) {
+  background-color: $background-color;
+
+  &:after {
+    background-color: $after-background-color;
+  }
+}
+
+// Define styles for different weather conditions
+.card-container {
+  // Base styles for card-container, if any
+
+  &.rain {
+    .weather-card {
+      @include weather-card(red, blue);
+    }
+  }
+
+  &.cloudy {
+    .weather-card {
+      @include weather-card(white, aqua);
+    }
+  }
+
+  &.sunny {
+    .weather-card {
+      @include weather-card(azure, bisque);
+    }
+  }
+
+  &.cloudy.sunny {
+    .weather-card {
+      @include weather-card(aliceblue, burlywood);
+    }
+  }
+}

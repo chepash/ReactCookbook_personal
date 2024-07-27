@@ -22,7 +22,6 @@ function App({ onRender }) {
   return (
     <div className='App'>
       <h1>Year: {year}</h1>
-      {/* <Profiler id="app" onRender={onRender || (() => {})}> */}
       <Profiler id='app' onRender={tracker}>
         <Profiler id='previous-button' onRender={onRender}>
           <button onClick={() => setYear((y) => y - 1)}>Previous</button>
