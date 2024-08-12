@@ -69,11 +69,32 @@ registerRoute(
   })
 );
 
+type CustomNotificationOptions = NotificationOptions & {
+  vibrate?: number[];
+};
+
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
+  }
+
+  if (event.data && event.data.type === 'DO_SLOW_THING') {
+    setTimeout(() => {
+      console.log('Slow thing finished!');
+      if (event.data.notifyMe) {
+        const options: CustomNotificationOptions = {
+          body: 'Now get on with your life',
+          icon: '/logo512.png',
+          vibrate: [100, 100, 100, 200, 200, 200, 100, 100, 100],
+          // vibrate: [100, 30, 100, 30, 100, 30, 200, 30, 200, 30, 200, 30, 100, 30, 100, 30, 100],
+          // tag: 'some-id-if-you-do-not-want-duplicates'
+        };
+
+        self.registration.showNotification('Slow thing finished!', options);
+      }
+    }, 2000);
   }
 });
 
